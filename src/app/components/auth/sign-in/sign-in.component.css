@@ -1,0 +1,12 @@
+div {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.page {
+    margin-top: 42%;
+}
+
+.forgotPassword {
+    color: rgba(6, 75, 139, 0.87);
+}
