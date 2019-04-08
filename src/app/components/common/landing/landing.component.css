@@ -1,27 +1,25 @@
-.bac{
-    height: 100%;
-}
-
-.al {
+.landing-1 {
+    color: orangered;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 260px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.btn1 {
-    font-size: 20px;
-    padding: 10px 40px 50px 40px;
-    background-color: transparent;
-    color: tomato;
+.btn-sign-in {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    background-color: green;
+    float: left;
+    margin-left: 30px;
+    padding: 20px;
 }
 
-.two{
-    height: 100%;
-    background-size: 1380px 700px;
+.btn-sign-up {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    color: white;
+    float: right;
+    margin-right: 30px;
+    padding: 20px;
 }
-
-.three{
-    height: 100%;
-    background-size: 1380px 700px;
-}
-
-

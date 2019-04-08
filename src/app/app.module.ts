@@ -58,7 +58,10 @@ import { LocationService } from './shared/services/location/location.service';
 import { PackageService } from './shared/services/package/package.service';
 import { WrongRouteComponent } from './components/common/wrong-route/wrong-route.component';
 
-
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { RouteReuseStrategy } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -97,6 +100,7 @@ import { WrongRouteComponent } from './components/common/wrong-route/wrong-route
   ],
   imports: [
     BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -108,7 +112,10 @@ import { WrongRouteComponent } from './components/common/wrong-route/wrong-route
     AuthService,
     UserService,
     PackageService,
-    LocationService
+    LocationService,
+    StatusBar,
+    SplashScreen,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })

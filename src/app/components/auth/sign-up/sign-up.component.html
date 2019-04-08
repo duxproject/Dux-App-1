@@ -1,32 +1,22 @@
-<div class="displayTable" [ngStyle]="{'background-image': getUrl()}">
+<div class="displayTable">
   <div class="displayTableCell">
 
     <div class="authBlock">
-      <h3>Sign Up</h3>
+      <h2>Sign Up</h2>
+      <br>
 
       <div class="formGroup">
         <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
       </div>
-
+      <br>
       <div class="formGroup">
         <input type="password" class="formControl" placeholder="Password" #userPwd required>
       </div>
-
+      <br>
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        <input type="button" class="btn btn-success" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
       </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
+      <br>
 
       <div class="">
         <a class="btn btn-danger" href="/">Cancel</a>
@@ -35,7 +25,7 @@
     </div>
 
     <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+      <span>Already have an account? <span  class="redirect" routerLink="/sign-in" style="color:blue">Log In</span></span>
     </div>
   </div>
 
