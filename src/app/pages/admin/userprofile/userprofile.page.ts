@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router } from "@angular/router";
+import { User } from "../../../shared/services/user/user";
+
 
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.page.html',
-  styleUrls: ['./userprofile.page.css'],
+  styleUrls: ['./userprofile.page.css']
 })
 export class UserprofilePage implements OnInit {
+  user: User;
 
-  constructor() { }
+  constructor(
+    public router: Router,
+    public ngZone: NgZone
+  ) { }
 
-  ngOnInit() {
+  getItem(): string{
+    const user = JSON.parse(localStorage.getItem('user'));
+    
+    return user;
   }
+  
+
+  ngOnInit() { 
+   }
 
 }

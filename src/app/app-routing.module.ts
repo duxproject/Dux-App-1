@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule'},
   { path: 'add-rates', loadChildren: './pages/guide/add-rates/add-rates.module#AddRatesPageModule' },
   { path: 'view-guide-profile', loadChildren: './pages/tourist/view-guide-profile/view-guide-profile.module#ViewGuideProfilePageModule' },
   { path: 'view-packages', loadChildren: './pages/tourist/view-packages/view-packages.module#ViewPackagesPageModule' },

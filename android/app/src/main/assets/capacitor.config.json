@@ -1,0 +1,6 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "Dux-App",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}
