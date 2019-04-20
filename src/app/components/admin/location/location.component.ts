@@ -28,8 +28,8 @@ export class LocationComponent implements OnInit {
     photoUrl5: '',
     videoUrl: '',
     loc: {
-      longitude: 0,
-      latitude: 0
+      longitude: '',
+      latitude: ''
     },
     verified: true
   };
@@ -121,12 +121,12 @@ export class LocationComponent implements OnInit {
 
 
   onSubmit() {
-    if (this.location.locationName !== '' && this.location.description !== '') {
+    if (this.location.locationName !== '' && this.location.description !== '' && this.location.loc.latitude && this.location.loc.longitude) {
       this.locationService.addLocation(this.location);
       this.location.locationName = '';
       this.location.description = '';
-      this.location.loc.latitude = parseInt(localStorage.getItem('lat'));
-      this.location.loc.longitude = parseInt(localStorage.getItem('long'));
+      this.location.loc.latitude = '';
+      this.location.loc.longitude = '';
     }
 }
 

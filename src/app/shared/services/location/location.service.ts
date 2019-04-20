@@ -28,8 +28,28 @@ export class LocationService {
     return this.locations;
   }
 
-  addLocation(location: Location) {
-    this.locationsCollection.add(location);
+
+  addLocation(location) {
+    const locationRef: AngularFirestoreDocument<Location> = this.afs.doc(`locations/${location.id}`);
+    const data = {
+      id: location.id,
+      locationName: location.locationName,
+      description: location.description,
+      photoURL1: location.photoUrl1,
+      photoURL2: location.photoUrl2,
+      photoURL3: location.photoUrl3,
+      photoURL4: location.photoUrl4,
+      photoURL5: location.photoUrl5,
+      videoURL: location.videoUrl,
+      verified: true,
+      loc: {
+        latitude: location.loc.latitude,
+        longitude: location.loc.longitude
+      }
+    }
+    return locationRef.set(data, {
+      merge: true
+    })
   }
 
   removeLocation(location) {
@@ -46,8 +66,8 @@ export class LocationService {
       videoURL: location.videoUrl,
       verified: false,
       loc: {
-        latitude: 0,
-        longitude: 0
+        latitude: location.loc.latitude,
+        longitude: location.loc.longitude
       }
     }
     return locationRef.set(data, {
